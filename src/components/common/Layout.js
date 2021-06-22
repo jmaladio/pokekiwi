@@ -19,11 +19,12 @@ const LayoutWrapper = styled.div`
   width: 100vw;
   height: 100vh;
   background-image: linear-gradient(45deg, #81B214, #FFCC29 );
+  overflow: scroll;
 
   @media (min-width: 720px) {
     width: 720px;
-    height: 410px;
+    height: 600px;
     border-radius: 20px;
-    
+    overflow: hidden;
   }
 `
