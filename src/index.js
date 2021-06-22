@@ -2,13 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
-import { normalize } from 'styled-normalize';
 
 import App from './components/App';
 
 export const GlobalStyle = createGlobalStyle`
-  ${normalize}
-
   body {
     display: flex;
     flex-direction: column;
