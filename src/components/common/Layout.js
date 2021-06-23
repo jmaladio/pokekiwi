@@ -21,9 +21,15 @@ const LayoutWrapper = styled.div`
   background-image: linear-gradient(45deg, #81B214, #FFCC29 );
   overflow: scroll;
 
+  & > main {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
   @media (min-width: 720px) {
     width: 720px;
-    height: 600px;
+    height: 700px;
     border-radius: 20px;
     overflow: hidden;
   }

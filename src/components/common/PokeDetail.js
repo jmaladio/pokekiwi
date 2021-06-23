@@ -10,7 +10,11 @@ export function PokeDetail({ pokemon }) {
           </div>
           <StyledCaption>{pokemon.name}</StyledCaption>
         </PokeFigure>
-        
+
+        <PokeAbilities>
+          {pokemon.abilities.map(element => <li>{element.ability.name}</li>)}
+        </PokeAbilities>
+
       </PokeDetailWrapper>
     )
   }
@@ -21,6 +25,7 @@ const PokeDetailWrapper = styled.article`
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
+  align-items: center;
 `
 
 const PokeFigure = styled.figure`
@@ -52,4 +57,22 @@ const StyledCaption = styled.figcaption`
   padding: 0.2rem 1rem;
   border-radius: 10px;
   box-shadow: -3px 4px 12px rgba(0, 0, 0, 0.2);
+`
+
+const PokeAbilities = styled.ul`
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 0;
+
+  & > li {
+    font-family: 'Baloo Da 2', cursive;
+    background-color: #356ABC;
+    color: #fafafa;
+    padding: 0.2rem 1rem;
+    border-radius: 10px;
+    box-shadow: -3px 4px 12px rgba(0, 0, 0, 0.2);
+    margin: 0 1rem;
+  }
 `
