@@ -12,7 +12,6 @@ export function MainPage() {
   useEffect(() => {
     const getPokemonList = async () => {
       const getListFromAPI = await axios.get(API_URI + '?limit=5');
-      console.log(getListFromAPI);
       const { results } = getListFromAPI.data;
       setPokemonList(results);
     }
