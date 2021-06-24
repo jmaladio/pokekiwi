@@ -36,9 +36,13 @@ const PokeFigure = styled.figure`
 
   & > div {
     background-color: #FFCD00;
-    padding: 2rem;
     border-radius: 50%;
     box-shadow: -3px 4px 12px rgba(0, 0, 0, 0.2);
+    width: 20rem;
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `
 

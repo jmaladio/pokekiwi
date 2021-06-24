@@ -1,50 +1,9 @@
-import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import axios from 'axios';
 
+import { usePokePagination } from '../hooks';
 import { PokeList } from '../common'
 import btnPrev from '../../assets/img/icon_arrowleft.png';
 import btnNext from '../../assets/img/icon_arrowright.png';
-
-const API_URI = process.env.REACT_APP_API_URI;
-
-const usePokePagination = () => {
-  const [ pokemonList, setPokemonList ] = useState([]);
-  const [ currentPage, setCurrentPage ] = useState(null);
-  const [ maxPage, setMaxPage ] = useState(null);
-
-  const getPokemonList = async ( offset = 0 ) => {
-    if (offset) {
-      const getListFromAPI = await axios.get(API_URI + '?limit=5&offset=' + offset);
-      const { results, count } = getListFromAPI.data;
-      setPokemonList(results);
-      setCurrentPage(offset / 5 + 1);
-      setMaxPage(Math.ceil(count/5))
-    } else {
-      const getListFromAPI = await axios.get(API_URI + '?limit=5');
-      const { results, count } = getListFromAPI.data;
-      setPokemonList(results);
-      setCurrentPage(1);
-      setMaxPage(Math.ceil(count/5));
-    }
-  }
-
-  useEffect(() => {  
-    getPokemonList();
-  }, [])
-
-  const getNextPage = () => getPokemonList(currentPage * 5);
-  const getPrevPage = () => getPokemonList(currentPage * 5 - 10);
-
-
-  return {
-    pokemonList,
-    currentPage,
-    maxPage,
-    getNextPage,
-    getPrevPage
-  }
-}
 
 export function MainPage() {
   const { pokemonList, currentPage, maxPage, getNextPage, getPrevPage } = usePokePagination();
