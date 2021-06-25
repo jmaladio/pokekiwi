@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+import { PokeName } from './PokeName';
 import pokeball from '../../assets/img/pokeball.png';
 
 export function PokeList({ list }) {
@@ -9,7 +10,7 @@ export function PokeList({ list }) {
     <li key={url}>
       <StyledLink to={"/pokemon/" + name}>
         <Pokeball src={pokeball} />
-        {name}
+        <PokeName name={name} />
       </StyledLink>
     </li>
     ))

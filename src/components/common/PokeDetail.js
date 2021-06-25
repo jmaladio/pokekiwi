@@ -1,3 +1,4 @@
+import { PokeName } from './PokeName';
 import styled from 'styled-components';
 
 export function PokeDetail({ pokemon }) {
@@ -8,7 +9,9 @@ export function PokeDetail({ pokemon }) {
           <div>
             <PokeIMG src={pokemon.sprites.other["official-artwork"].front_default} alt="pokemon artwork"/>
           </div>
-          <StyledCaption>{pokemon.name}</StyledCaption>
+          <StyledCaption>
+            <PokeName name={pokemon.name} />
+          </StyledCaption>
         </PokeFigure>
 
         <PokeAbilities>
