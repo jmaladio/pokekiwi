@@ -50,3 +50,16 @@ export const usePokePagination = () => {
     getLastPage
   }
 }
+
+export const useLanguageWithLS = () => {
+  const [ language, setLanguage ] = useState(s => window.localStorage.getItem('lang') || 'en');
+  console.log(language)
+  useEffect(() => {
+    window.localStorage.setItem('lang', language);
+  }, [language])
+
+  return [
+    language,
+    setLanguage
+  ]
+}

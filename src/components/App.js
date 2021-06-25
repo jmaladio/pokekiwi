@@ -1,5 +1,6 @@
-import { useState, createContext } from 'react';
+import { createContext } from 'react';
 
+import { useLanguageWithLS } from './hooks'
 import Routes from './Routes';
 import { Layout } from './common';
 
@@ -8,7 +9,7 @@ export const LanguageContext = createContext({
 });
 
 function App() {
-  const [ language, setLanguage ] = useState('en');
+  const [ language, setLanguage ] = useLanguageWithLS();
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>
