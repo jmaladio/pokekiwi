@@ -4,6 +4,8 @@ A frontend SPA for the [PokeAPI](https://pokeapi.co/). Made with JS ES2015+, cus
 TODO:
 - Implement more pagination options, methods already in place.
 - Show more info on Detail Page.
+- Loading and transitions.
+- Unit Testing.
 
 
 # Getting Started with Create React App
