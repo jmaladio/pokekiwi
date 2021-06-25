@@ -1,3 +1,11 @@
+# PokeKiwi Project
+A frontend SPA for the [PokeAPI](https://pokeapi.co/). Made with JS ES2015+, custom hooks, < 💅 /> and ☕.
+
+TODO:
+- Implement more pagination options, methods already in place.
+- Show more info on Detail Page.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
