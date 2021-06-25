@@ -1,4 +1,4 @@
-import { PokeName } from './PokeName';
+import { PokeName, PokeAbility } from './';
 import styled from 'styled-components';
 
 export function PokeDetail({ pokemon }) {
@@ -14,9 +14,15 @@ export function PokeDetail({ pokemon }) {
           </StyledCaption>
         </PokeFigure>
 
-        <PokeAbilities>
-          {pokemon.abilities.map(element => <li>{element.ability.name}</li>)}
-        </PokeAbilities>
+        <PokeAbilitiesWrapper>
+          {pokemon.abilities.map(element => {
+            return (
+              <li key={element.ability.name}>
+                <PokeAbility name={element.ability.name} />
+              </li>
+            )
+          })}
+        </PokeAbilitiesWrapper>
 
       </PokeDetailWrapper>
     )
@@ -66,7 +72,7 @@ const StyledCaption = styled.figcaption`
   box-shadow: -3px 4px 12px rgba(0, 0, 0, 0.2);
 `
 
-const PokeAbilities = styled.ul`
+const PokeAbilitiesWrapper = styled.ul`
   list-style: none;
   display: flex;
   flex-flow: row wrap;
